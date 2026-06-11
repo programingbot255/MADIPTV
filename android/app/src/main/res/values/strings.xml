@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Tanvir TV</string>
     <string name="title_activity_main">Tanvir TV</string>
-    <string name="package_name">com.tanvirtv.app</string>
-    <string name="custom_url_scheme">com.tanvirtv.app</string>
+    <string name="package_name">com.alphatv.app</string>
+    <string name="custom_url_scheme">com.alphatv.app</string>
 </resources>

@@ -196,7 +196,7 @@ npx cap open android
 ## 🔗 Useful Links
 
 - **Latest APK Release:** [Download AlphaTV-v1.1.2.apk](https://github.com/Shariar-Ahamed/online-tv-streaming-platform/releases)
-- **Live Web App:** [Alpha TV Live Web App](https://shariar-ahamed.github.io/online-tv-streaming-platform/)
+- **Live Web App:** [Tanvir TV Live Web App](https://shariar-ahamed.github.io/online-tv-streaming-platform/)
 - **Source Code Repository:** [GitHub Repository](https://github.com/Shariar-Ahamed/online-tv-streaming-platform)
 
 ---

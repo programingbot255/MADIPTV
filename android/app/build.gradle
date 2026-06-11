@@ -24,7 +24,7 @@ android {
     }
     applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "AlphaTV-${variant.buildType.name}.apk"
+            outputFileName = "TanvirTV-${variant.buildType.name}.apk"
         }
     }
 }
