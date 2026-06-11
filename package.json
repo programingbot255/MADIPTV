@@ -1,5 +1,5 @@
 {
-  "name": "alpha-tv",
+  "name": "tanvir-tv",
   "version": "1.1.2",
   "scripts": {
     "dev": "vite --port 3000 --host 0.0.0.0",
