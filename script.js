@@ -1108,23 +1108,8 @@ function setupViewModeToggle() {
 let latestApkUrl = "mailto:tanvirislam2506@gmail.com";
 
 function setupMobileAppBanner() {
-  if (window.Capacitor) return;
-
-  document.querySelectorAll(".download-apk-link").forEach(link => {
-    link.setAttribute("href", latestApkUrl);
-  });
-
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
-  const isBannerHidden = localStorage.getItem("alpha_tv_hide_app_banner") === "true";
-
-  if (isMobile && !isBannerHidden) {
-    const banner = document.getElementById("mobileAppBanner");
-    if (banner) {
-      setTimeout(() => {
-        banner.classList.remove("hidden");
-      }, 2000);
-    }
-  }
+  // Mobile app banner disabled for clean web-only experience
+  return;
 }
 
 function closeAppBanner() {
@@ -1139,43 +1124,8 @@ function closeAppBanner() {
 const currentBuildCode = 13; // Matches version 1.1.2 build code
 
 function checkForUpdates() {
-  if (!window.Capacitor) return;
-
-  const configUrl = "app-update.json";
-
-  fetch(configUrl)
-    .then(response => {
-      if (!response.ok) throw new Error("Update config response error");
-      return response.json();
-    })
-    .then(data => {
-      if (data && data.buildCode && data.buildCode > currentBuildCode) {
-        // Show the header notification badge whenever a new update is available
-        showHeaderUpdateNotification(data);
-
-        // Check if the user clicked "Later" for this exact build code in the last 36 hours
-        const laterTime = localStorage.getItem("alpha_tv_update_later_time");
-        const laterBuild = localStorage.getItem("alpha_tv_update_later_build");
-        
-        if (laterBuild && parseInt(laterBuild) === data.buildCode && laterTime) {
-          const timeDiff = Date.now() - parseInt(laterTime);
-          const waitTime = 36 * 60 * 60 * 1000; // 36 hours in milliseconds
-          
-          if (timeDiff < waitTime) {
-            console.log("Update prompt skipped because user selected 'Later' in the last 36 hours.");
-            return;
-          }
-        }
-        
-        showUpdateModal(data);
-      } else {
-        // If no update is available or already updated, hide the header badge
-        hideHeaderUpdateNotification();
-      }
-    })
-    .catch(err => {
-      console.warn("Failed to check for remote app updates:", err);
-    });
+  // App updates check disabled for clean web-only experience
+  return;
 }
 
 function showHeaderUpdateNotification(updateData) {
